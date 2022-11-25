@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: custom-pod
+spec:
+  containers:
+  - name: custom-pod
+    image: gcr.io/kuar-demo/kuard-amd64:1
+    ports:
+      - containerPort: 8080
+    resources:
+      requests:
+        memory: "32Mi"
+        cpu: "256m"
+      limits:
+        memory: "64Mi"
+        cpu: "512m"
