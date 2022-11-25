@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql
+spec:
+  containers:
+  - name: redis
+    image: mysql
+    env:
+      - name: MYSQL_ROOT_PASSWORD
+        value: pass
+      - name: MYSQL_DATABASE
+        value: mydb
+    ports:
+      - containerPort: 3306
+    resources:
+      requests:
+        memory: "32Mi"
+        cpu: "256m"
+      limits:
+        memory: "64Mi"
+        cpu: "512m"
